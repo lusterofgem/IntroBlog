@@ -7,6 +7,9 @@
             width: 100%;
             margin: 0px;
         }
+        * {
+            user-select: none;
+        }
         #header {
             height: 60%;
             background-color: rgb(127,201,255);
@@ -14,8 +17,7 @@
         #container {
             height: 35%;
             /* make the two div to ignore new line character, and display in one line */
-            white-space: nowrap;
-            overflow: hidden;
+            /*white-space: nowrap;*/
             background-color: rgb(120,120,120);
         }
         #footer {
@@ -39,11 +41,10 @@
 </head>
 
 <body>
-    <div id="header">
+    <div id="header" draggable="false">
     </div>
     <div id="container">
-        <div id="containerLeft"></div>
-        <div id="containerRight"></div>
+        <div id="containerLeft"></div><div id="containerRight"></div>
     </div>
     <div id="footer">
         

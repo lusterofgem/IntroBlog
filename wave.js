@@ -12,7 +12,8 @@ function Wave(x, y) {
     this.age=0;
     this.img = document.createElement('img');
     this.img.setAttribute('src', resourcePath + 'wave0.png');
-    this.img.setAttribute('style', 'position:absolute;top:'+this.x+'px;left:'+this.y+'px;');
+    this.img.setAttribute('style', 'position:absolute;top:'+(this.y-25)+'px;left:'+(this.x-25)+'px;');
+    this.img.setAttribute('draggable', 'false');
     document.body.appendChild(this.img);
 }
 
@@ -20,11 +21,6 @@ function Wave(x, y) {
 function createWave(x,y) {
     let wave = new Wave(x,y);
     waveArray.push(wave);
-}
-
-// Create a wave on mouse position
-function createWaveOnMouse() {
-    createWave(window.event.clientX, window.event.clientY);
 }
 
 // Delete a wave which is dead
@@ -60,6 +56,15 @@ function runAllWave() {
         if(waveArray[i]) {
             runWave(waveArray[i]);
         }
+    }
+}
+
+// Create wave on mouse position
+function createWaveOnMouse(event) {
+    const maxWave = 1;
+    let randomWaveCount = Math.random()*maxWave;;
+    for(let i=0; i<randomWaveCount; i+=1) {
+        setTimeout(function(){createWave(event.clientX, event.clientY)}, i*50);
     }
 }
 
