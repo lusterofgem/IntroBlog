@@ -1,18 +1,25 @@
 <html>
 
 <head>
+    <title>IntroBlog</title>
     <style>
+        * {
+            user-select: none;
+            font-size: 120%;
+            font-weight: bold;
+            overflow: auto;
+        }
         body {
             min-height: 100%;
             width: 100%;
             margin: 0px;
         }
-        * {
-            user-select: none;
-        }
         #header {
             height: 60%;
             background-color: rgb(127,201,255);
+            font-size: 200%;
+            text-align: center;
+            color: rgb(0,0,0,0.5);
         }
         #container {
             height: 35%;
@@ -34,6 +41,8 @@
             width: 80%;
             display: inline-block;
             background-color: rgb(150,150,150);
+            /* make the div to the top */
+            vertical-align: top;
     
         }
     </style>
@@ -41,10 +50,9 @@
 </head>
 
 <body>
-    <div id="header" draggable="false">
-    </div>
+    <div id="header" draggable="false"><p style="margin-top:auto; margin-bottom:auto;">Intro Blog<p></div>
     <div id="container">
-        <div id="containerLeft"></div><div id="containerRight"></div>
+        <div id="containerLeft"></div><div id="containerRight">Hello, my name is Alan.<br/>Welcome to my blog.<br/>I am writing some self-introduction text for my blog.<br/>I am very bad at making website, however, I think it is interesting.<br/>Because I can see my result immediately, that is very cool.<br/>My eye is very tired, I think I must go to sleep right now.<br/>Last of the last, I can tell you a secret.<br/>This blog is my homework!</div>
     </div>
     <div id="footer">
         
